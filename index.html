@@ -317,6 +317,7 @@
   .form-status{margin-top:18px;padding:14px 18px;border-radius:14px;font-size:.89rem;display:none;
     background:rgba(34,197,94,.10);border:1px solid rgba(74,222,128,.32);color:#bbf7d0}
   .form-status.show{display:block}
+  .form-status.error{background:rgba(248,113,113,.10);border-color:rgba(248,113,113,.34);color:#fecaca}
 
   /* ---------- Footer ---------- */
   footer{border-top:1px solid var(--border);padding:44px 0 38px;margin-top:20px}
@@ -458,7 +459,7 @@
             <span class="node">6</span><span class="txt">Agentic AI</span>
           </div>
         </div>
-        <p class="note">Location: <span class="placeholder">[Add your city]</span> &nbsp;·&nbsp; Email: <span class="placeholder">[Add your email]</span></p>
+        <p class="note">Location: <span class="placeholder">[Add your city]</span> &nbsp;·&nbsp; Email: shivshankar4454@outlook.com</p>
       </aside>
     </div>
   </div>
@@ -829,7 +830,7 @@
         <ul class="contact-list">
           <li>
             <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span>
-            <span><span class="cl">Email</span><span class="cv"><span class="placeholder">[Add your email]</span></span></span>
+            <span><span class="cl">Email</span><span class="cv">shivshankar4454@outlook.com</span></span>
           </li>
           <li>
             <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
@@ -851,7 +852,11 @@
       </aside>
 
       <div class="form-card glass reveal">
-        <form id="contactForm" novalidate>
+        <form id="contactForm" action="https://formsubmit.co/shivshankar4454@outlook.com" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New portfolio enquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
           <div class="field" id="f-name">
             <label for="name">Name <span class="req">*</span></label>
             <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name">
@@ -1013,7 +1018,8 @@
   /* ---------- Contact form validation ---------- */
   var form = document.getElementById("contactForm");
   var status = document.getElementById("formStatus");
-  var recipient = "[ADD YOUR EMAIL]";
+  var recipient = "shivshankar4454@outlook.com";
+var endpoint = "https://formsubmit.co/" + recipient;
 
   function setState(id, ok) {
     document.getElementById(id).classList.toggle("invalid", !ok);
@@ -1049,26 +1055,106 @@
     e.preventDefault();
 
     if (!validate(true)) {
-      status.classList.remove("show");
+      setStatus("Please fix the highlighted fields and try again.", true);
       return;
     }
 
-    if (recipient === "[ADD YOUR EMAIL]") {
-      status.textContent =
-        "Form validated. Next step: replace [ADD YOUR EMAIL] in the script with your real address " +
-        "to enable sending, or connect this form to your own backend / form service.";
-    } else {
-      var subject = encodeURIComponent("Portfolio enquiry from " + form.name.value.trim());
-      var body = encodeURIComponent(
-        form.message.value.trim() + "\n\n— " + form.name.value.trim() + "\n" + form.email.value.trim()
-      );
-      window.location.href = "mailto:" + recipient + "?subject=" + subject + "&body=" + body;
-      status.textContent = "Opening your email client…";
-    }
+    var name = form.name.value.trim();
+    var email = form.email.value.trim();
+    var message = form.message.value.trim();
 
+    var btn = form.querySelector('button[type="submit"]');
+    var btnLabel = btn.innerHTML;
+    btn.disabled = true;
+    btn.style.opacity = ".7";
+    btn.textContent = "Sending…";
+    setStatus("Sending your message…");
+
+    fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        message: message,
+        _subject: "Portfolio enquiry from " + name,
+        _template: "table",
+        _captcha: "false"
+      })
+    })
+      .then(function (res) {
+        return res.text().then(function (text) {
+          var data = null;
+          try {
+            data = JSON.parse(text);
+          } catch (err) {
+            /* response was not JSON */
+          }
+          if (data) return data;
+
+          if (/Thanks|thank you|message sent|success/i.test(text)) {
+            return { success: true };
+          }
+          if (/Activate Form|needs Activation/i.test(text)) {
+            throw new Error(
+              "the form service needs one-time activation. Check your inbox and spam folder for an " +
+              "activation email from FormSubmit, and click its link once."
+            );
+          }
+          if (/fight spam/i.test(text)) {
+            throw new Error(
+              "the form service flagged this as spam. Please try again in a moment, or email me " +
+              "directly at " + recipient + "."
+            );
+          }
+          if (/Unable to submit/i.test(text)) {
+            throw new Error(
+              "the form service rejected the request. This happens when the page is opened straight " +
+              "from a file. Serve the site over http:// or deploy it, then try again — or email me " +
+              "directly at " + recipient + "."
+            );
+          }
+          throw new Error(
+            "the form service returned an unexpected response. Please email me directly at " +
+            recipient + " instead."
+          );
+        });
+      })
+      .then(function (data) {
+        if (data && data.success === false) {
+          throw new Error(data.message || "Submission was rejected.");
+        }
+        form.reset();
+        ["f-name", "f-email", "f-message"].forEach(function (id) {
+          document.getElementById(id).classList.remove("invalid");
+        });
+        setStatus(
+          "Thanks " + name + " — your message is on its way to my inbox. " +
+          "If it doesn't arrive within a few minutes, check your spam folder."
+        );
+      })
+      .catch(function (err) {
+        setStatus(
+          "Couldn't send that just now: " + err.message +
+          " Please email me directly at " + recipient + " instead."
+        , true);
+      })
+      .then(function () {
+        btn.disabled = false;
+        btn.style.opacity = "";
+        btn.innerHTML = btnLabel;
+      });
+  });
+
+  function setStatus(text, isError) {
+    status.textContent = text;
+    status.classList.toggle("error", !!isError);
     status.classList.add("show");
     status.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
-  });
+  }
 
   /* ---------- Smooth anchor offset fallback ---------- */
   document.addEventListener("click", function (e) {
