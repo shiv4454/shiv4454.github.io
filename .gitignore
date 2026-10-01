@@ -1,0 +1,19 @@
+# Editors / OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+
+# Local env (keep secrets out of the repo)
+.env
+.env.local
+
+# Build / deploy artefacts
+node_modules/
+.netlify/
+.wrangler/

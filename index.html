@@ -4,7 +4,54 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shiv Shankar — IT Infrastructure &amp; Automation Professional</title>
-<meta name="description" content="Portfolio of Shiv Shankar, IT Infrastructure &amp; Automation Professional working toward Cybersecurity, Cloud and AI-driven infrastructure.">
+<meta name="description" content="Portfolio of Shiv Shankar, an IT Infrastructure and Automation Professional building toward Cybersecurity, Cloud and AI-driven infrastructure — including an AI-Driven IT Operations Platform.">
+<meta name="author" content="Shiv Shankar">
+<meta name="theme-color" content="#05070f">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="[ADD YOUR SITE URL]">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shiv Shankar — IT Infrastructure &amp; Automation Professional">
+<meta property="og:description" content="Infrastructure, automation, security and AI. Building an AI-driven IT operations platform with OpenCode and Telegram.">
+<meta property="og:url" content="[ADD YOUR SITE URL]">
+<meta property="og:image" content="[ADD YOUR OG IMAGE URL]">
+<meta property="og:site_name" content="Shiv Shankar">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shiv Shankar — IT Infrastructure &amp; Automation Professional">
+<meta name="twitter:description" content="Infrastructure, automation, security and AI. Building an AI-driven IT operations platform.">
+<meta name="twitter:image" content="[ADD YOUR OG IMAGE URL]">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Structured data: replace placeholders before publishing -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Shiv Shankar",
+  "jobTitle": "IT Infrastructure & Automation Professional",
+  "description": "IT Infrastructure and Automation Professional working toward Cybersecurity, Cloud and AI-driven infrastructure.",
+  "email": "mailto:shivshankar4454@outlook.com",
+  "url": "[ADD YOUR SITE URL]",
+  "knowsAbout": [
+    "Systems Administration",
+    "IT Infrastructure",
+    "Automation",
+    "Cybersecurity",
+    "Cloud",
+    "Artificial Intelligence",
+    "Agentic AI"
+  ],
+  "sameAs": [
+    "[ADD YOUR LINKEDIN URL]",
+    "[ADD YOUR GITHUB URL]"
+  ]
+}
+</script>
+
 <style>
   :root{
     --bg:#05070f;
@@ -12,20 +59,19 @@
     --surface:rgba(255,255,255,.035);
     --surface-2:rgba(255,255,255,.055);
     --border:rgba(255,255,255,.09);
-    --border-strong:rgba(255,255,255,.16);
+    --border-strong:rgba(255,255,255,.17);
     --text:#f2f4fb;
-    --muted:#a0a8c0;
+    --muted:#a2aac2;
     --muted-2:#6f7891;
     --blue:#3b82f6;
     --violet:#8b5cf6;
     --accent-grad:linear-gradient(135deg,var(--blue) 0%,var(--violet) 100%);
     --radius:20px;
-    --radius-sm:12px;
     --shadow:0 24px 60px -20px rgba(0,0,0,.85);
-    --shadow-glow:0 0 0 1px rgba(139,92,246,.18), 0 30px 70px -30px rgba(99,102,241,.55);
     --maxw:1180px;
     --nav-h:68px;
     --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
   }
 
   *,*::before,*::after{box-sizing:border-box}
@@ -43,7 +89,19 @@
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
   button,input,textarea{font:inherit;color:inherit}
+  h1,h2,h3,h4{margin:0;line-height:1.14;letter-spacing:-.025em;font-weight:700}
+  h2{font-size:clamp(1.95rem,4.4vw,2.9rem)}
+  h3{font-size:1.16rem}
+  p{margin:0}
   ::selection{background:rgba(139,92,246,.35);color:#fff}
+
+  :focus-visible{outline:2px solid #818cf8;outline-offset:3px;border-radius:6px}
+
+  .skip-link{
+    position:absolute;left:-9999px;top:0;z-index:200;
+    background:var(--accent-grad);color:#fff;padding:12px 20px;border-radius:0 0 12px 0;font-weight:600;
+  }
+  .skip-link:focus{left:0}
 
   /* ---------- Ambient background ---------- */
   .bg-layer{position:fixed;inset:0;z-index:-2;pointer-events:none;background:
@@ -52,7 +110,7 @@
     radial-gradient(1000px 700px at 50% 108%, rgba(59,130,246,.10), transparent 65%),
     linear-gradient(180deg,var(--bg) 0%, var(--bg-2) 55%, var(--bg) 100%);
   }
-  .bg-grid{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.35;
+  .bg-grid{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.32;
     background-image:linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
                      linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
     background-size:64px 64px;
@@ -62,8 +120,8 @@
 
   /* ---------- Layout ---------- */
   .container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  section{padding:110px 0;scroll-margin-top:calc(var(--nav-h) + 12px)}
-  .section-head{max-width:760px;margin-bottom:56px}
+  section{padding:112px 0;scroll-margin-top:calc(var(--nav-h) + 12px)}
+  .section-head{max-width:780px;margin-bottom:56px}
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
     font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
@@ -72,15 +130,17 @@
     -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
   }
   .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent-grad);box-shadow:0 0 12px rgba(139,92,246,.9)}
-  h1,h2,h3,h4{margin:0;line-height:1.12;letter-spacing:-.025em;font-weight:700}
-  h2{font-size:clamp(1.95rem,4.4vw,2.9rem)}
-  h3{font-size:1.16rem}
-  p{margin:0}
-  .lead{color:var(--muted);font-size:clamp(1rem,1.6vw,1.075rem);margin-top:18px;max-width:64ch}
+  .lead{color:var(--muted);font-size:clamp(1rem,1.6vw,1.075rem);margin-top:18px;max-width:66ch}
   .grad-text{
     background:var(--accent-grad);
     -webkit-background-clip:text;background-clip:text;
     -webkit-text-fill-color:transparent;color:transparent;
+  }
+
+  .placeholder{
+    display:inline-block;font-size:.8em;color:#cbd5fe;
+    background:rgba(99,102,241,.12);border:1px dashed rgba(147,163,255,.42);
+    border-radius:6px;padding:1px 7px;font-family:var(--mono);
   }
 
   /* ---------- Scroll progress ---------- */
@@ -89,7 +149,8 @@
 
   /* ---------- Nav ---------- */
   .nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;
-    display:flex;align-items:center;transition:background .35s ease, border-color .35s ease, box-shadow .35s ease;
+    display:flex;align-items:center;
+    transition:background .35s ease, border-color .35s ease, box-shadow .35s ease;
     border-bottom:1px solid transparent;
   }
   .nav.scrolled{
@@ -107,7 +168,7 @@
   .brand span.sub{display:block;font-size:.68rem;font-weight:500;color:var(--muted-2);letter-spacing:.02em}
   .nav-links{display:flex;align-items:center;gap:4px}
   .nav-links a{
-    position:relative;padding:8px 14px;border-radius:999px;font-size:.9rem;font-weight:500;
+    padding:8px 14px;border-radius:999px;font-size:.9rem;font-weight:500;
     color:var(--muted);transition:color .25s ease, background .25s ease;
   }
   .nav-links a:hover{color:var(--text);background:var(--surface)}
@@ -115,7 +176,8 @@
   .nav-cta{
     display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:999px;
     font-size:.88rem;font-weight:600;background:var(--accent-grad);color:#fff;
-    box-shadow:0 12px 30px -14px rgba(99,102,241,1);transition:transform .25s ease, box-shadow .25s ease, filter .25s ease;
+    box-shadow:0 12px 30px -14px rgba(99,102,241,1);
+    transition:transform .25s ease, box-shadow .25s ease, filter .25s ease;
   }
   .nav-cta:hover{transform:translateY(-2px);filter:brightness(1.08);box-shadow:0 18px 40px -14px rgba(99,102,241,1)}
   .burger{display:none;width:42px;height:42px;border-radius:11px;border:1px solid var(--border);
@@ -146,15 +208,17 @@
   /* ---------- Buttons ---------- */
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
     padding:15px 28px;border-radius:999px;font-weight:600;font-size:.97rem;cursor:pointer;
-    border:1px solid transparent;transition:transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s ease, background .28s ease, border-color .28s ease;
+    border:1px solid transparent;
+    transition:transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s ease, background .28s ease, border-color .28s ease;
     -webkit-tap-highlight-color:transparent;
   }
+  .btn svg{width:17px;height:17px;flex:none}
   .btn-primary{background:var(--accent-grad);color:#fff;box-shadow:0 18px 42px -18px rgba(99,102,241,1)}
   .btn-primary:hover{transform:translateY(-3px);box-shadow:0 26px 54px -18px rgba(99,102,241,1)}
+  .btn-primary:disabled{opacity:.7;cursor:not-allowed;transform:none}
   .btn-ghost{background:var(--surface);border-color:var(--border);color:var(--text);
     -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
   .btn-ghost:hover{transform:translateY(-3px);background:var(--surface-2);border-color:var(--border-strong)}
-  .btn svg{width:17px;height:17px;flex:none}
 
   /* ---------- Glass card ---------- */
   .glass{
@@ -168,26 +232,32 @@
   .glass:hover{transform:translateY(-5px);border-color:var(--border-strong);background:var(--surface-2)}
 
   /* ---------- Hero ---------- */
-  .hero{padding:calc(var(--nav-h) + 96px) 0 96px;position:relative}
+  .hero{padding:calc(var(--nav-h) + 96px) 0 92px;position:relative}
   .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
-  .hero h1{font-size:clamp(2.5rem,6.4vw,4.35rem);letter-spacing:-.04em}
+  .hero h1{font-size:clamp(2.4rem,6.2vw,4.2rem);letter-spacing:-.04em}
   .hero .role{
     display:inline-flex;align-items:center;gap:9px;margin-bottom:26px;
     font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#c7d2fe;
   }
-  .hero .role .pulse{width:8px;height:8px;border-radius:50%;background:var(--violet);position:relative}
+  .hero .role .pulse{width:8px;height:8px;border-radius:50%;background:var(--violet);position:relative;flex:none}
   .hero .role .pulse::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--violet);
     animation:pulse 2.4s ease-out infinite}
   @keyframes pulse{0%{transform:scale(1);opacity:.85}100%{transform:scale(3.6);opacity:0}}
-  .hero-sub{margin-top:22px;font-size:clamp(1.02rem,1.75vw,1.14rem);color:var(--muted);max-width:56ch}
+
+  .rotator{min-height:1.5em;font-weight:600}
+  .rotator .word{display:inline-block}
+  .rotator .caret{display:inline-block;width:2px;height:1em;background:var(--violet);
+    vertical-align:-.14em;margin-left:3px;animation:blink 1s steps(2,start) infinite}
+  @keyframes blink{50%{opacity:0}}
+
+  .hero-sub{margin-top:22px;font-size:clamp(1.02rem,1.75vw,1.14rem);color:var(--muted);max-width:58ch}
   .hero-actions{margin-top:38px;display:flex;flex-wrap:wrap;gap:14px}
-  .hero-meta{margin-top:46px;display:flex;flex-wrap:wrap;gap:12px}
+  .hero-meta{margin-top:44px;display:flex;flex-wrap:wrap;gap:12px}
   .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 15px;border-radius:999px;
     background:var(--surface);border:1px solid var(--border);font-size:.83rem;color:var(--muted);
     -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
-  .chip .sq{width:6px;height:6px;border-radius:2px;background:var(--accent-grad)}
+  .chip .sq{width:6px;height:6px;border-radius:2px;background:var(--accent-grad);flex:none}
 
-  /* Hero card */
   .hero-card{padding:30px;position:relative;overflow:hidden}
   .hero-card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
     background:linear-gradient(140deg, rgba(59,130,246,.5), rgba(139,92,246,.14) 45%, transparent 70%);
@@ -211,22 +281,38 @@
   .hero-card .note{margin-top:22px;padding-top:20px;border-top:1px dashed var(--border);
     font-size:.8rem;color:var(--muted-2)}
 
+  /* ---------- Marquee ---------- */
+  .marquee{border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    padding:20px 0;overflow:hidden;
+    -webkit-mask-image:linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+            mask-image:linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  }
+  .marquee-track{display:flex;gap:44px;width:max-content;animation:scroll 38s linear infinite}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  .marquee-track span{font-size:.95rem;font-weight:600;color:var(--muted-2);white-space:nowrap;
+    display:flex;align-items:center;gap:12px;letter-spacing:-.01em}
+  .marquee-track span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent-grad);opacity:.7;flex:none}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
   /* ---------- About ---------- */
   .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:start}
   .about-text{padding:38px}
-  .about-text p + p{margin-top:18px}
   .about-text p{color:var(--muted)}
+  .about-text p + p{margin-top:18px}
   .about-text .hl{color:var(--text);font-weight:600}
+  .principles{margin-top:26px;padding-top:24px;border-top:1px solid var(--border);
+    display:grid;gap:14px}
+  .principle{display:flex;gap:13px;align-items:flex-start}
+  .principle .pnum{width:24px;height:24px;border-radius:7px;flex:none;display:grid;place-items:center;
+    font-size:.68rem;font-weight:700;background:rgba(99,102,241,.14);
+    border:1px solid rgba(147,163,255,.28);color:#c7d2fe}
+  .principle .pt{font-size:.93rem;color:var(--muted)}
+  .principle .pt b{color:var(--text);font-weight:600}
+
   .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
   .fact{padding:24px}
   .fact .k{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);font-weight:600}
   .fact .v{margin-top:10px;font-size:1.02rem;font-weight:600;line-height:1.4}
-
-  .placeholder{
-    display:inline-block;font-size:.8em;color:#cbd5fe;
-    background:rgba(99,102,241,.12);border:1px dashed rgba(147,163,255,.42);
-    border-radius:6px;padding:1px 7px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  }
 
   /* ---------- Skills ---------- */
   .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:22px}
@@ -241,6 +327,13 @@
     border:1px solid var(--border);color:var(--muted);transition:all .25s ease}
   .skill-card:hover .tag-list li{border-color:rgba(147,163,255,.32);color:var(--text)}
 
+  .currently{margin-top:22px;padding:32px}
+  .currently h3{font-size:1.1rem}
+  .learn-grid{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:18px}
+  .learn{padding:20px;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid var(--border)}
+  .learn .lt{font-weight:600;font-size:.95rem}
+  .learn .ld{margin-top:8px;font-size:.86rem;color:var(--muted-2);line-height:1.55}
+
   /* ---------- Timeline ---------- */
   .timeline{position:relative;padding-left:34px}
   .timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;border-radius:2px;
@@ -254,12 +347,13 @@
   .tl-step{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
     background:var(--accent-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
   .tl-year{font-size:.78rem;color:var(--muted-2);border:1px solid var(--border);padding:4px 12px;border-radius:999px}
+  .tl-card h3{margin-top:12px}
   .tl-card p{margin-top:12px;color:var(--muted);font-size:.95rem}
   .tl-card .focus{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
   .tl-card .focus span{font-size:.76rem;color:#c7d2fe;background:rgba(99,102,241,.11);
     border:1px solid rgba(147,163,255,.26);padding:5px 11px;border-radius:8px}
 
-  /* ---------- Featured project ---------- */
+  /* ---------- Projects ---------- */
   .project{padding:0;overflow:hidden}
   .project-body{padding:42px}
   .project-top{display:flex;align-items:flex-start;gap:22px;flex-wrap:wrap;justify-content:space-between}
@@ -267,7 +361,7 @@
   .badge{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;font-weight:600;
     padding:8px 16px;border-radius:999px;background:var(--accent-grad);color:#fff;white-space:nowrap;
     box-shadow:0 12px 28px -14px rgba(99,102,241,1)}
-  .project-desc{margin-top:20px;color:var(--muted);max-width:72ch}
+  .project-desc{margin-top:20px;color:var(--muted);max-width:74ch}
   .feature-grid{margin-top:34px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
   .feature{padding:22px;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid var(--border);
     transition:all .3s ease}
@@ -283,19 +377,35 @@
   .stack-col .sv{margin-top:10px;font-size:.92rem;color:var(--text);font-weight:500}
   .project-actions{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
 
+  .more-projects{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
+  .pcard{padding:28px;display:flex;flex-direction:column}
+  .pcard .ptag{align-self:flex-start;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    color:#c7d2fe;background:rgba(99,102,241,.12);border:1px solid rgba(147,163,255,.26);
+    padding:5px 12px;border-radius:999px}
+  .pcard h3{margin-top:18px;font-size:1.06rem}
+  .pcard p{margin-top:12px;color:var(--muted);font-size:.92rem;flex:1}
+  .pcard .pmeta{margin-top:20px;padding-top:18px;border-top:1px solid var(--border);
+    font-size:.82rem;color:var(--muted-2);display:flex;flex-wrap:wrap;gap:8px}
+
   /* ---------- Contact ---------- */
   .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:26px;align-items:start}
   .contact-info{padding:36px}
+  .contact-info > p{margin-top:12px;color:var(--muted);font-size:.95rem}
   .contact-list{margin-top:26px;display:flex;flex-direction:column;gap:18px;list-style:none;padding:0}
   .contact-list li{display:flex;gap:14px;align-items:flex-start}
   .contact-list .ci{width:36px;height:36px;border-radius:11px;flex:none;display:grid;place-items:center;
     background:var(--surface-2);border:1px solid var(--border)}
   .contact-list .ci svg{width:16px;height:16px;color:#c7d2fe}
-  .contact-list .cl{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);font-weight:600}
-  .contact-list .cv{margin-top:4px;font-size:.94rem;font-weight:500;word-break:break-word}
+  .contact-list .cl{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);font-weight:600;display:block}
+  .contact-list .cv{margin-top:4px;font-size:.94rem;font-weight:500;word-break:break-word;display:block}
+  .copy-btn{margin-top:8px;font-size:.78rem;color:#c7d2fe;background:rgba(99,102,241,.12);
+    border:1px solid rgba(147,163,255,.26);padding:5px 12px;border-radius:8px;cursor:pointer;
+    transition:all .22s ease}
+  .copy-btn:hover{background:rgba(99,102,241,.2);color:#fff}
+
   .form-card{padding:36px}
   .field{margin-bottom:20px}
-  .field label{display:block;font-size:.82rem;font-weight:600;margin-bottom:9px;letter-spacing:.01em}
+  .field label{display:block;font-size:.82rem;font-weight:600;margin-bottom:9px}
   .field label .req{color:var(--violet)}
   .field input,.field textarea{
     width:100%;padding:14px 16px;border-radius:14px;
@@ -320,7 +430,7 @@
   .form-status.error{background:rgba(248,113,113,.10);border-color:rgba(248,113,113,.34);color:#fecaca}
 
   /* ---------- Footer ---------- */
-  footer{border-top:1px solid var(--border);padding:44px 0 38px;margin-top:20px}
+  footer{border-top:1px solid var(--border);padding:44px 0 38px}
   .foot-inner{display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}
   .foot-brand{display:flex;align-items:center;gap:12px}
   .foot-copy{font-size:.83rem;color:var(--muted-2)}
@@ -328,7 +438,20 @@
   .foot-links a{font-size:.86rem;color:var(--muted);transition:color .25s ease}
   .foot-links a:hover{color:var(--text)}
 
-  /* ---------- Reveal animation ---------- */
+  /* ---------- Back to top ---------- */
+  .to-top{
+    position:fixed;right:22px;bottom:22px;z-index:90;
+    width:44px;height:44px;border-radius:50%;display:grid;place-items:center;cursor:pointer;
+    background:rgba(15,18,34,.8);border:1px solid var(--border);color:var(--text);
+    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+    opacity:0;visibility:hidden;transform:translateY(12px);
+    transition:opacity .3s ease, transform .3s ease, visibility .3s, background .3s ease;
+  }
+  .to-top.show{opacity:1;visibility:visible;transform:none}
+  .to-top:hover{background:var(--accent-grad);border-color:transparent}
+  .to-top svg{width:18px;height:18px}
+
+  /* ---------- Reveal ---------- */
   .reveal{opacity:0;transform:translateY(26px);
     transition:opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1)}
   .reveal.in{opacity:1;transform:none}
@@ -347,24 +470,44 @@
   @media (max-width:600px){
     .container{padding:0 18px}
     section{padding:70px 0}
-    .hero{padding:calc(var(--nav-h) + 64px) 0 68px}
+    .hero{padding:calc(var(--nav-h) + 60px) 0 64px}
     .hero-actions .btn{flex:1 1 100%}
-    .about-text,.form-card,.contact-info,.project-body,.hero-card{padding:26px}
+    .about-text,.form-card,.contact-info,.project-body,.hero-card,.currently{padding:26px}
     .facts{grid-template-columns:1fr}
     .hero-meta{gap:9px}
     .foot-inner{flex-direction:column;align-items:flex-start;gap:16px}
-    .tl-top{align-items:flex-start}
+    .to-top{right:16px;bottom:16px}
   }
+
+  /* ---------- Print ---------- */
+  @media print{
+    :root{--text:#111;--muted:#333;--muted-2:#555;--border:#ccc;--border-strong:#999;
+          --surface:#fff;--surface-2:#f5f5f5}
+    body{background:#fff;color:#111}
+    .bg-layer,.bg-grid,.nav,.mobile-menu,.progress,.to-top,.marquee,
+    .hero-actions,.project-actions,.form-card,.copy-btn,.reveal{opacity:1 !important;transform:none !important}
+    .bg-layer,.bg-grid,.nav,.mobile-menu,.progress,.to-top,.marquee,
+    .hero-actions,.project-actions,.form-card,.copy-btn{display:none !important}
+    .glass{border:1px solid #ccc;box-shadow:none;background:#fff;transform:none !important}
+    .grad-text{-webkit-text-fill-color:#4f46e5;color:#4f46e5;background:none}
+    section{padding:24px 0}
+    .placeholder{border-color:#999;background:#f0f0f0;color:#333}
+    a{text-decoration:underline}
+  }
+
+  /* ---------- Reduced motion ---------- */
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;
       transition-duration:.01ms !important}
     .reveal{opacity:1;transform:none}
+    .marquee-track{animation:none}
   }
 </style>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="bg-layer"></div>
 <div class="bg-grid"></div>
 <div class="progress" id="progress"></div>
@@ -373,7 +516,7 @@
 <header class="nav" id="nav">
   <div class="nav-inner">
     <a href="#hero" class="brand" aria-label="Shiv Shankar — home">
-      <span class="brand-mark">SS</span>
+      <span class="brand-mark" aria-hidden="true">SS</span>
       <span>Shiv Shankar<span class="sub">Infrastructure &amp; Automation</span></span>
     </a>
 
@@ -381,7 +524,7 @@
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#path">Career Path</a>
-      <a href="#project">Project</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -397,79 +540,96 @@
   <a href="#about">About</a>
   <a href="#skills">Skills</a>
   <a href="#path">Career Path</a>
-  <a href="#project">Project</a>
+  <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
   <a href="#contact" class="nav-cta">Hire me</a>
 </div>
+
+<main id="main">
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="hero">
   <div class="container">
     <div class="hero-grid">
       <div>
-        <span class="role"><span class="pulse"></span> Open to opportunities</span>
-        <h1>Building the systems<br>that run <span class="grad-text">everything else.</span></h1>
+        <span class="role"><span class="pulse" aria-hidden="true"></span> Open to opportunities</span>
+        <h1>
+          Building the systems<br>
+          that run <span class="grad-text">everything else.</span>
+        </h1>
         <p class="hero-sub">
-          I'm <strong style="color:var(--text)">Shiv Shankar</strong>, an IT Infrastructure &amp; Automation
-          Professional. I keep infrastructure stable, automate the repetitive work, and I'm
-          pushing the same discipline into <strong style="color:var(--text)">Cybersecurity, Cloud and
-          AI-driven infrastructure</strong> — building autonomous agents that do the operational work.
+          I'm <strong style="color:var(--text)">Shiv Shankar</strong> — a
+          <span class="rotator" id="rotator" aria-label="Role"><span class="word"></span><span class="caret" aria-hidden="true"></span></span><br>
+          I keep infrastructure stable, automate the repetitive work, and push the same discipline into
+          <strong style="color:var(--text)">cybersecurity, cloud and AI-driven infrastructure</strong>.
         </p>
 
         <div class="hero-actions">
-          <a href="#project" class="btn btn-primary">
+          <a href="#projects" class="btn btn-primary">
             View Projects
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <a href="#contact" class="btn btn-ghost">
             Contact Me
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
           </a>
         </div>
 
         <div class="hero-meta">
-          <span class="chip"><span class="sq"></span> Infrastructure</span>
-          <span class="chip"><span class="sq"></span> Automation</span>
-          <span class="chip"><span class="sq"></span> Cybersecurity</span>
-          <span class="chip"><span class="sq"></span> Cloud</span>
-          <span class="chip"><span class="sq"></span> AI &amp; Agentic AI</span>
+          <span class="chip"><span class="sq" aria-hidden="true"></span> Infrastructure</span>
+          <span class="chip"><span class="sq" aria-hidden="true"></span> Automation</span>
+          <span class="chip"><span class="sq" aria-hidden="true"></span> Cybersecurity</span>
+          <span class="chip"><span class="sq" aria-hidden="true"></span> Cloud</span>
+          <span class="chip"><span class="sq" aria-hidden="true"></span> AI &amp; Agentic AI</span>
         </div>
       </div>
 
-      <!-- Hero glass card: current trajectory -->
       <aside class="hero-card glass reveal">
         <span class="card-label">Current trajectory</span>
         <div class="track">
-          <div class="track-step done">
-            <span class="node">1</span><span class="txt">SysAdmin</span>
-          </div>
-          <div class="track-step done">
-            <span class="node">2</span><span class="txt">Infrastructure</span>
-          </div>
-          <div class="track-step now">
-            <span class="node">3</span><span class="txt">Automation</span>
-          </div>
-          <div class="track-step">
-            <span class="node">4</span><span class="txt">Cybersecurity</span>
-          </div>
-          <div class="track-step">
-            <span class="node">5</span><span class="txt">AI</span>
-          </div>
-          <div class="track-step">
-            <span class="node">6</span><span class="txt">Agentic AI</span>
-          </div>
+          <div class="track-step done"><span class="node">1</span><span class="txt">SysAdmin</span></div>
+          <div class="track-step done"><span class="node">2</span><span class="txt">Infrastructure</span></div>
+          <div class="track-step now"><span class="node">3</span><span class="txt">Automation</span></div>
+          <div class="track-step"><span class="node">4</span><span class="txt">Cybersecurity</span></div>
+          <div class="track-step"><span class="node">5</span><span class="txt">AI</span></div>
+          <div class="track-step"><span class="node">6</span><span class="txt">Agentic AI</span></div>
         </div>
-        <p class="note">Location: <span class="placeholder">[Add your city]</span> &nbsp;·&nbsp; Email: shivshankar4454@outlook.com</p>
+        <p class="note">
+          Location: <span class="placeholder">[Add your city]</span> ·&nbsp;
+          Email: <button class="copy-btn" id="copyEmail" data-email="shivshankar4454@outlook.com" style="margin-top:0">shivshankar4454@outlook.com</button>
+        </p>
       </aside>
     </div>
   </div>
 </section>
 
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marquee">
+    <span>Systems Administration</span>
+    <span>Linux</span>
+    <span>Networking</span>
+    <span>Virtualisation</span>
+    <span>Shell Scripting</span>
+    <span>Python</span>
+    <span>PowerShell</span>
+    <span>Orchestration</span>
+    <span>Access Control</span>
+    <span>Hardening</span>
+    <span>Log Analysis</span>
+    <span>LLM Integration</span>
+    <span>Agentic Workflows</span>
+    <span>OpenCode</span>
+    <span>Guardrails</span>
+    <span>RAG</span>
+  </div>
+</div>
+
 <!-- ============ ABOUT ============ -->
 <section id="about">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><span class="dot"></span> About</span>
+      <span class="eyebrow"><span class="dot" aria-hidden="true"></span> About</span>
       <h2>Ops by trade. <span class="grad-text">Automation by instinct.</span></h2>
     </div>
 
@@ -487,14 +647,29 @@
           needed a human — design, debugging, judgement.
         </p>
         <p>
-          Now I'm taking that same instinct into <span class="hl">security, cloud and AI-driven
-          infrastructure</span>. Not as a pivot away from what I know, but as the next layer on top
-          of it: hardened systems, automated defence, and AI agents that can carry out operational
-          tasks end to end.
+          Now I take that instinct into <span class="hl">security, cloud and AI-driven
+          infrastructure</span>. Not a pivot away from what I know, but the next layer on top of it:
+          hardened systems, automated defence, and AI agents that carry out operational tasks end to end.
         </p>
-        <p style="margin-top:24px">
-          <a href="#contact" class="btn btn-ghost" style="padding:12px 22px;font-size:.9rem">Let's talk</a>
-        </p>
+
+        <div class="principles">
+          <div class="principle">
+            <span class="pnum" aria-hidden="true">01</span>
+            <span class="pt"><b>Automate the repeatable, not the interesting.</b> If a task has a rule, a script should own it.</span>
+          </div>
+          <div class="principle">
+            <span class="pnum" aria-hidden="true">02</span>
+            <span class="pt"><b>Design for the failure.</b> Redundancy, rollback and a plan B before anything goes live.</span>
+          </div>
+          <div class="principle">
+            <span class="pnum" aria-hidden="true">03</span>
+            <span class="pt"><b>Security is part of the build,</b> not a review that happens afterwards.</span>
+          </div>
+          <div class="principle">
+            <span class="pnum" aria-hidden="true">04</span>
+            <span class="pt"><b>Document as you go.</b> The next operator — or future me — should never guess.</span>
+          </div>
+        </div>
       </div>
 
       <div class="facts">
@@ -514,6 +689,14 @@
           <span class="k">Experience</span>
           <span class="v"><span class="placeholder">[Add years]</span><br>of hands-on work</span>
         </div>
+        <div class="fact glass reveal">
+          <span class="k">Work style</span>
+          <span class="v">Remote &amp; on-site<br><span class="placeholder">[Add preference]</span></span>
+        </div>
+        <div class="fact glass reveal">
+          <span class="k">Languages</span>
+          <span class="v"><span class="placeholder">[Add languages]</span></span>
+        </div>
         <div class="fact glass reveal" style="grid-column:1 / -1">
           <span class="k">Currently open to</span>
           <span class="v"><span class="placeholder">[Add role type — e.g. SysAdmin, Infrastructure Engineer, Automation Engineer]</span></span>
@@ -527,7 +710,7 @@
 <section id="skills">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><span class="dot"></span> Skills</span>
+      <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Skills</span>
       <h2>Four disciplines, <span class="grad-text">one operator.</span></h2>
       <p class="lead">
         The stack is built around keeping systems healthy — and increasingly, around letting
@@ -536,9 +719,8 @@
     </div>
 
     <div class="skills-grid">
-      <!-- Infrastructure -->
       <article class="skill-card glass reveal">
-        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.01M7 17.5h.01"/></svg></span>
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.01M7 17.5h.01"/></svg></span>
         <h3>Infrastructure</h3>
         <p class="kicker">The foundation everything else runs on.</p>
         <ul class="tag-list">
@@ -553,9 +735,8 @@
         </ul>
       </article>
 
-      <!-- Automation -->
       <article class="skill-card glass reveal">
-        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5z"/></svg></span>
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5z"/></svg></span>
         <h3>Automation</h3>
         <p class="kicker">Turning manual work into repeatable systems.</p>
         <ul class="tag-list">
@@ -570,9 +751,8 @@
         </ul>
       </article>
 
-      <!-- Security -->
       <article class="skill-card glass reveal">
-        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="m9 12 2 2 4-4"/></svg></span>
         <h3>Security</h3>
         <p class="kicker">Hardening and defending the environment.</p>
         <ul class="tag-list">
@@ -587,9 +767,8 @@
         </ul>
       </article>
 
-      <!-- AI -->
       <article class="skill-card glass reveal">
-        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="13" rx="3"/><path d="M12 2.5V6M9 11.5v.01M15 11.5v.01M9.5 15.5h5M2 11v3M22 11v3"/></svg></span>
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="13" rx="3"/><path d="M12 2.5V6M9 11.5v.01M15 11.5v.01M9.5 15.5h5M2 11v3M22 11v3"/></svg></span>
         <h3>AI &amp; Agentic AI</h3>
         <p class="kicker">Agents that operate infrastructure, not just chat.</p>
         <ul class="tag-list">
@@ -604,6 +783,25 @@
         </ul>
       </article>
     </div>
+
+    <div class="currently glass reveal">
+      <h3>Currently exploring</h3>
+      <p class="lead" style="margin-top:10px;font-size:.95rem">Where the next layer of the path is pointing.</p>
+      <div class="learn-grid">
+        <div class="learn">
+          <p class="lt">Cloud-native infrastructure</p>
+          <p class="ld"><span class="placeholder">[Add what you're studying — e.g. provider, services, current focus]</span></p>
+        </div>
+        <div class="learn">
+          <p class="lt">Security fundamentals</p>
+          <p class="ld"><span class="placeholder">[Add what you're studying — e.g. cert track, tooling, threat focus]</span></p>
+        </div>
+        <div class="learn">
+          <p class="lt">Agent reliability</p>
+          <p class="ld"><span class="placeholder">[Add what you're studying — e.g. evaluation, guardrails, memory]</span></p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -611,126 +809,87 @@
 <section id="path">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><span class="dot"></span> Career Path</span>
+      <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Career Path</span>
       <h2>A deliberate line, <span class="grad-text">not a leap of faith.</span></h2>
       <p class="lead">
         Each stage earned the next. Systems administration taught me the environment; infrastructure
-        taught me scale; automation taught me leverage; security and AI are where that leverage
-        points next.
+        taught me scale; automation taught me leverage; security and AI are where that leverage points next.
       </p>
     </div>
 
     <div class="timeline">
       <div class="tl-item reveal">
-        <span class="marker"></span>
+        <span class="marker" aria-hidden="true"></span>
         <div class="tl-card glass">
-          <div class="tl-top">
-            <span class="tl-step">Step 01</span>
-            <span class="tl-year"><span class="placeholder">[Year]</span></span>
-          </div>
-          <h3 style="margin-top:12px">SysAdmin</h3>
+          <div class="tl-top"><span class="tl-step">Step 01</span><span class="tl-year"><span class="placeholder">[Year]</span></span></div>
+          <h3>SysAdmin</h3>
           <p>Where it started. Learning the environment the hard way — installing, patching, troubleshooting and documenting every system I was responsible for.</p>
-          <div class="focus">
-            <span>Systems</span><span>Users &amp; Access</span><span>Documentation</span>
-          </div>
-          <p style="margin-top:16px;font-size:.85rem;color:var(--muted-2)">
-            Organization: <span class="placeholder">[Add employer]</span>
-          </p>
+          <div class="focus"><span>Systems</span><span>Users &amp; Access</span><span>Documentation</span></div>
+          <p style="margin-top:16px;font-size:.85rem;color:var(--muted-2)">Organization: <span class="placeholder">[Add employer]</span></p>
         </div>
       </div>
 
       <div class="tl-item reveal">
-        <span class="marker"></span>
+        <span class="marker" aria-hidden="true"></span>
         <div class="tl-card glass">
-          <div class="tl-top">
-            <span class="tl-step">Step 02</span>
-            <span class="tl-year"><span class="placeholder">[Year]</span></span>
-          </div>
-          <h3 style="margin-top:12px">Infrastructure</h3>
-          <p>Moving up from individual machines to the platform: networking, virtualisation, storage, availability and the design decisions behind them.</p>
-          <div class="focus">
-            <span>Networking</span><span>Virtualisation</span><span>Reliability</span><span>Cloud Foundations</span>
-          </div>
-          <p style="margin-top:16px;font-size:.85rem;color:var(--muted-2)">
-            Organization: <span class="placeholder">[Add employer]</span>
-          </p>
+          <div class="tl-top"><span class="tl-step">Step 02</span><span class="tl-year"><span class="placeholder">[Year]</span></span></div>
+          <h3>Infrastructure</h3>
+          <p>Moving from individual machines to the platform: networking, virtualisation, storage, availability, and the design decisions behind them.</p>
+          <div class="focus"><span>Networking</span><span>Virtualisation</span><span>Reliability</span><span>Cloud Foundations</span></div>
+          <p style="margin-top:16px;font-size:.85rem;color:var(--muted-2)">Organization: <span class="placeholder">[Add employer]</span></p>
         </div>
       </div>
 
       <div class="tl-item reveal">
-        <span class="marker"></span>
+        <span class="marker" aria-hidden="true"></span>
         <div class="tl-card glass">
-          <div class="tl-top">
-            <span class="tl-step">Step 03</span>
-            <span class="tl-year"><span class="placeholder">[Year]</span></span>
-          </div>
-          <h3 style="margin-top:12px">Automation</h3>
+          <div class="tl-top"><span class="tl-step">Step 03</span><span class="tl-year"><span class="placeholder">[Year]</span></span></div>
+          <h3>Automation</h3>
           <p>Current stage. Identifying manual processes, encoding them as scripts and workflows, and wiring them into the tools people already use.</p>
-          <div class="focus">
-            <span>Scripting</span><span>Orchestration</span><span>ChatOps</span><span>AI Integration</span>
-          </div>
-          <p style="margin-top:16px;font-size:.85rem;color:var(--muted-2)">
-            Organization: <span class="placeholder">[Add employer]</span>
-          </p>
+          <div class="focus"><span>Scripting</span><span>Orchestration</span><span>ChatOps</span><span>AI Integration</span></div>
+          <p style="margin-top:16px;font-size:.85rem;color:var(--muted-2)">Organization: <span class="placeholder">[Add employer]</span></p>
         </div>
       </div>
 
       <div class="tl-item reveal">
-        <span class="marker"></span>
+        <span class="marker" aria-hidden="true"></span>
         <div class="tl-card glass">
-          <div class="tl-top">
-            <span class="tl-step">Step 04</span>
-            <span class="tl-year"><span class="placeholder">[Year]</span></span>
-          </div>
-          <h3 style="margin-top:12px">Cybersecurity</h3>
+          <div class="tl-top"><span class="tl-step">Step 04</span><span class="tl-year"><span class="placeholder">[Year]</span></span></div>
+          <h3>Cybersecurity</h3>
           <p>Applying the same systems thinking defensively — knowing the environment well enough to spot what doesn't belong, then hardening it.</p>
-          <div class="focus">
-            <span>Hardening</span><span>Detection</span><span>Access Control</span><span>Incident Response</span>
-          </div>
-          <p style="margin-top:16px;font-size:.85rem;color:var(--muted-2)">
-            Certifications: <span class="placeholder">[Add if you hold any]</span>
-          </p>
+          <div class="focus"><span>Hardening</span><span>Detection</span><span>Access Control</span><span>Incident Response</span></div>
+          <p style="margin-top:16px;font-size:.85rem;color:var(--muted-2)">Certifications: <span class="placeholder">[Add if you hold any]</span></p>
         </div>
       </div>
 
       <div class="tl-item reveal">
-        <span class="marker"></span>
+        <span class="marker" aria-hidden="true"></span>
         <div class="tl-card glass">
-          <div class="tl-top">
-            <span class="tl-step">Step 05</span>
-            <span class="tl-year"><span class="placeholder">[Year]</span></span>
-          </div>
-          <h3 style="margin-top:12px">AI-Driven Infrastructure</h3>
-          <p>Using machine learning not as a buzzword but as an operational component — detection, prediction, and automated response inside the infra layer.</p>
-          <div class="focus">
-            <span>Anomaly Detection</span><span>LLM Integration</span><span>Automated Response</span><span>Guardrails</span>
-          </div>
+          <div class="tl-top"><span class="tl-step">Step 05</span><span class="tl-year"><span class="placeholder">[Year]</span></span></div>
+          <h3>AI-Driven Infrastructure</h3>
+          <p>Using machine learning as an operational component rather than a buzzword — detection, prediction and automated response inside the infrastructure layer.</p>
+          <div class="focus"><span>Anomaly Detection</span><span>LLM Integration</span><span>Automated Response</span><span>Guardrails</span></div>
         </div>
       </div>
 
       <div class="tl-item reveal">
-        <span class="marker"></span>
+        <span class="marker" aria-hidden="true"></span>
         <div class="tl-card glass">
-          <div class="tl-top">
-            <span class="tl-step">Step 06</span>
-            <span class="tl-year">Now</span>
-          </div>
-          <h3 style="margin-top:12px">Agentic AI</h3>
-          <p>The end state of the line: agents that hold context, take decisions and carry out real operational tasks — with humans defining the guardrails.</p>
-          <div class="focus">
-            <span>Agent Workflows</span><span>Tool Use</span><span>Human-in-the-Loop</span><span>Safety</span>
-          </div>
+          <div class="tl-top"><span class="tl-step">Step 06</span><span class="tl-year">Now</span></div>
+          <h3>Agentic AI</h3>
+          <p>The end state of the line: agents that hold context, make decisions and carry out real operational tasks — with humans defining the guardrails.</p>
+          <div class="focus"><span>Agent Workflows</span><span>Tool Use</span><span>Human-in-the-Loop</span><span>Safety</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ FEATURED PROJECT ============ -->
-<section id="project">
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><span class="dot"></span> Flagship Project</span>
+      <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Flagship Project</span>
       <h2>AI-Driven IT Operations Platform</h2>
     </div>
 
@@ -739,7 +898,7 @@
         <div class="project-top">
           <h3>AI-Driven IT<br>Operations Platform</h3>
           <span class="badge">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5z"/></svg>
             Lab &amp; Build in Progress
           </span>
         </div>
@@ -755,57 +914,66 @@
 
         <div class="feature-grid">
           <div class="feature">
-            <span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg></span>
+            <span class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg></span>
             <p class="ft">Natural-Language Ops</p>
             <p class="fd">Chat with your infrastructure. Ask for status, request a check, or trigger a runbook — in plain language, from Telegram.</p>
           </div>
           <div class="feature">
-            <span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></svg></span>
+            <span class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></svg></span>
             <p class="ft">Guarded Execution</p>
             <p class="fd">Agents propose and act within defined boundaries, with confirmation gates before anything destructive runs.</p>
           </div>
           <div class="feature">
-            <span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></span>
+            <span class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></span>
             <p class="ft">Operational Insight</p>
             <p class="fd">Logs, health and history in one view, summarised on demand instead of exported and read by hand.</p>
           </div>
           <div class="feature">
-            <span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2 6 13h5l-1 9 8-11h-5l1-9z"/></svg></span>
+            <span class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2 6 13h5l-1 9 8-11h-5l1-9z"/></svg></span>
             <p class="ft">Automation Engine</p>
             <p class="fd">Repeatable tasks and runbooks the agent can execute end to end — the direct answer to repetitive ops work.</p>
           </div>
         </div>
 
         <div class="stack">
-          <div class="stack-col">
-            <p class="sk">Core tools</p>
-            <p class="sv">OpenCode · Telegram · Shell · Python</p>
-          </div>
-          <div class="stack-col">
-            <p class="sk">Focus areas</p>
-            <p class="sv">Agent workflows · Guardrails · Ops tooling</p>
-          </div>
-          <div class="stack-col">
-            <p class="sk">Repository</p>
-            <p class="sv"><span class="placeholder">[Add link]</span></p>
-          </div>
-          <div class="stack-col">
-            <p class="sk">Status</p>
-            <p class="sv">Actively building</p>
-          </div>
+          <div class="stack-col"><p class="sk">Core tools</p><p class="sv">OpenCode · Telegram · Shell · Python</p></div>
+          <div class="stack-col"><p class="sk">Focus areas</p><p class="sv">Agent workflows · Guardrails · Ops tooling</p></div>
+          <div class="stack-col"><p class="sk">Repository</p><p class="sv"><span class="placeholder">[Add link]</span></p></div>
+          <div class="stack-col"><p class="sk">Status</p><p class="sv">Actively building</p></div>
         </div>
 
         <div class="project-actions">
           <a href="#contact" class="btn btn-primary" style="padding:13px 24px;font-size:.92rem">
             Discuss this project
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="#project" class="btn btn-ghost" style="padding:13px 24px;font-size:.92rem">
-            <span class="placeholder">[Case study]</span>
+          <a href="#projects" class="btn btn-ghost" style="padding:13px 24px;font-size:.92rem">
+            <span class="placeholder">[Add case study link]</span>
           </a>
         </div>
       </div>
     </article>
+
+    <div class="more-projects">
+      <article class="pcard glass reveal">
+        <span class="ptag">Automation</span>
+        <h3><span class="placeholder">[Add project name]</span></h3>
+        <p><span class="placeholder">[Add a short description of the project — what it does and why it mattered. Keep it to two or three lines.]</span></p>
+        <div class="pmeta"><span>Stack: <span class="placeholder">[Add]</span></span><span>Year: <span class="placeholder">[Add]</span></span></div>
+      </article>
+      <article class="pcard glass reveal">
+        <span class="ptag">Infrastructure</span>
+        <h3><span class="placeholder">[Add project name]</span></h3>
+        <p><span class="placeholder">[Add a short description of the project — what it does and why it mattered.]</span></p>
+        <div class="pmeta"><span>Stack: <span class="placeholder">[Add]</span></span><span>Year: <span class="placeholder">[Add]</span></span></div>
+      </article>
+      <article class="pcard glass reveal">
+        <span class="ptag">Security</span>
+        <h3><span class="placeholder">[Add project name]</span></h3>
+        <p><span class="placeholder">[Add a short description of the project — what it does and why it mattered.]</span></p>
+        <div class="pmeta"><span>Stack: <span class="placeholder">[Add]</span></span><span>Year: <span class="placeholder">[Add]</span></span></div>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -813,39 +981,41 @@
 <section id="contact">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><span class="dot"></span> Contact</span>
+      <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Contact</span>
       <h2>Let's talk about <span class="grad-text">your infrastructure.</span></h2>
       <p class="lead">
-        Whether it's a role, a project, or a system that's outgrown you — send a message and I'll
-        get back to you. <span class="placeholder">[Add your response time]</span>
+        Whether it's a role, a project, or a system that's outgrown you — send a message and it
+        lands straight in my inbox. <span class="placeholder">[Add your response time]</span>
       </p>
     </div>
 
     <div class="contact-grid">
       <aside class="contact-info glass reveal">
         <h3>Get in touch</h3>
-        <p style="margin-top:12px;color:var(--muted);font-size:.95rem">
-          Prefer a direct line? Reach out however suits you.
-        </p>
+        <p>Prefer a direct line? Reach out however suits you.</p>
         <ul class="contact-list">
           <li>
-            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span>
-            <span><span class="cl">Email</span><span class="cv">shivshankar4454@outlook.com</span></span>
+            <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span>
+            <span>
+              <span class="cl">Email</span>
+              <span class="cv">shivshankar4454@outlook.com</span>
+              <button class="copy-btn" data-email="shivshankar4454@outlook.com">Copy address</button>
+            </span>
           </li>
           <li>
-            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+            <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
             <span><span class="cl">Location</span><span class="cv"><span class="placeholder">[Add your city]</span></span></span>
           </li>
           <li>
-            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15 0 18M12 3c-2.5 2.7-2.5 15 0 18"/></svg></span>
+            <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15 0 18M12 3c-2.5 2.7-2.5 15 0 18"/></svg></span>
             <span><span class="cl">LinkedIn</span><span class="cv"><span class="placeholder">[Add your profile URL]</span></span></span>
           </li>
           <li>
-            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a1 1 0 0 1 1-1h11l4 4v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M14 4v5h5M8 13h8M8 16.5h5"/></svg></span>
+            <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a1 1 0 0 1 1-1h11l4 4v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M14 4v5h5M8 13h8M8 16.5h5"/></svg></span>
             <span><span class="cl">Résumé</span><span class="cv"><span class="placeholder">[Add CV link]</span></span></span>
           </li>
           <li>
-            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+            <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
             <span><span class="cl">Availability</span><span class="cv"><span class="placeholder">[Add notice period / timezone]</span></span></span>
           </li>
         </ul>
@@ -857,28 +1027,29 @@
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
           <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+
           <div class="field" id="f-name">
             <label for="name">Name <span class="req">*</span></label>
-            <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name">
+            <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required>
             <span class="err">Please enter your name.</span>
           </div>
 
           <div class="field" id="f-email">
             <label for="email">Email <span class="req">*</span></label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
             <span class="err">Please enter a valid email address.</span>
           </div>
 
           <div class="field" id="f-message">
             <label for="message">Message <span class="req">*</span></label>
-            <textarea id="message" name="message" placeholder="What are you working on, and where could I help?"></textarea>
+            <textarea id="message" name="message" placeholder="What are you working on, and where could I help?" required></textarea>
             <span class="err">Please write a short message (at least 10 characters).</span>
           </div>
 
           <div class="form-foot">
             <button type="submit" class="btn btn-primary">
               Send message
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </button>
             <span class="form-note">All fields marked * are required.</span>
           </div>
@@ -890,12 +1061,14 @@
   </div>
 </section>
 
+</main>
+
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="container">
     <div class="foot-inner">
       <div class="foot-brand">
-        <span class="brand-mark">SS</span>
+        <span class="brand-mark" aria-hidden="true">SS</span>
         <div>
           <div style="font-weight:600">Shiv Shankar</div>
           <div class="foot-copy">IT Infrastructure &amp; Automation Professional</div>
@@ -906,7 +1079,7 @@
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#path">Career Path</a>
-        <a href="#project">Project</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -918,20 +1091,28 @@
   </div>
 </footer>
 
+<button class="to-top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
 <script>
 (function () {
   "use strict";
 
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   /* ---------- Year ---------- */
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  /* ---------- Sticky nav state ---------- */
+  /* ---------- Sticky nav, progress, back-to-top ---------- */
   var nav = document.getElementById("nav");
   var progress = document.getElementById("progress");
+  var toTop = document.getElementById("toTop");
 
   function onScroll() {
     var y = window.pageYOffset || document.documentElement.scrollTop;
     nav.classList.toggle("scrolled", y > 24);
+    toTop.classList.toggle("show", y > 620);
 
     var doc = document.documentElement;
     var max = (doc.scrollHeight - window.innerHeight) || 1;
@@ -939,6 +1120,10 @@
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
+
+  toTop.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+  });
 
   /* ---------- Mobile menu ---------- */
   var burger = document.getElementById("burger");
@@ -970,7 +1155,6 @@
 
   /* ---------- Fade-in on scroll ---------- */
   var reveals = document.querySelectorAll(".reveal");
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   if (reduce || !("IntersectionObserver" in window)) {
     Array.prototype.forEach.call(reveals, function (el) { el.classList.add("in"); });
@@ -989,7 +1173,7 @@
   }
 
   /* ---------- Active nav link ---------- */
-  var sections = ["about", "skills", "path", "project", "contact"];
+  var sections = ["about", "skills", "path", "projects", "contact"];
   var links = {};
   sections.forEach(function (id) {
     links[id] = document.querySelectorAll('.nav-links a[href="#' + id + '"]');
@@ -1015,11 +1199,80 @@
     });
   }
 
-  /* ---------- Contact form validation ---------- */
+  /* ---------- Marquee: duplicate content for seamless loop ---------- */
+  var marquee = document.getElementById("marquee");
+  if (marquee) {
+    marquee.innerHTML += marquee.innerHTML;
+  }
+
+  /* ---------- Role rotator ---------- */
+  var rotator = document.getElementById("rotator");
+  if (rotator) {
+    var words = [
+      "Systems Administrator.",
+      "Infrastructure Engineer.",
+      "Automation Specialist.",
+      "Security Enthusiast.",
+      "AI Builder."
+    ];
+    var slot = rotator.querySelector(".word");
+    var wi = 0, ci = 0, deleting = false;
+
+    if (reduce) {
+      slot.textContent = words[0];
+    } else {
+      (function tick() {
+        var word = words[wi];
+        slot.textContent = deleting ? word.slice(0, --ci) : word.slice(0, ++ci);
+
+        var delay = deleting ? 32 : 62;
+        if (!deleting && ci === word.length) {
+          deleting = true;
+          delay = 1900;
+        } else if (deleting && ci === 0) {
+          deleting = false;
+          wi = (wi + 1) % words.length;
+          delay = 320;
+        }
+        setTimeout(tick, delay);
+      })();
+    }
+  }
+
+  /* ---------- Copy email to clipboard ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll("[data-email]"), function (btn) {
+    var original = btn.textContent;
+    btn.addEventListener("click", function () {
+      var email = btn.getAttribute("data-email");
+      var done = function () {
+        btn.textContent = "Copied";
+        setTimeout(function () { btn.textContent = original; }, 1800);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email).then(done, function () { fallback(email, done); });
+      } else {
+        fallback(email, done);
+      }
+    });
+  });
+
+  function fallback(text, done) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); } catch (err) { /* ignore */ }
+    document.body.removeChild(ta);
+  }
+
+  /* ---------- Contact form ---------- */
   var form = document.getElementById("contactForm");
   var status = document.getElementById("formStatus");
   var recipient = "shivshankar4454@outlook.com";
-var endpoint = "https://formsubmit.co/" + recipient;
+  var endpoint = "https://formsubmit.co/" + recipient;
 
   function setState(id, ok) {
     document.getElementById(id).classList.toggle("invalid", !ok);
@@ -1037,10 +1290,18 @@ var endpoint = "https://formsubmit.co/" + recipient;
     ok = setState("f-email", emailOk) && ok;
     ok = setState("f-message", message.length >= 10) && ok;
 
-    if (!showErrors) {
-      if (!ok) { document.querySelector(".field.invalid input, .field.invalid textarea").focus(); }
+    if (showErrors && !ok) {
+      var first = document.querySelector(".field.invalid input, .field.invalid textarea");
+      if (first) first.focus();
     }
-    return ok && emailOk;
+    return ok;
+  }
+
+  function setStatus(text, isError) {
+    status.textContent = text;
+    status.classList.toggle("error", !!isError);
+    status.classList.add("show");
+    status.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
   }
 
   ["name", "email", "message"].forEach(function (key) {
@@ -1149,14 +1410,7 @@ var endpoint = "https://formsubmit.co/" + recipient;
       });
   });
 
-  function setStatus(text, isError) {
-    status.textContent = text;
-    status.classList.toggle("error", !!isError);
-    status.classList.add("show");
-    status.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
-  }
-
-  /* ---------- Smooth anchor offset fallback ---------- */
+  /* ---------- Smooth anchors with nav offset ---------- */
   document.addEventListener("click", function (e) {
     var link = e.target.closest('a[href^="#"]');
     if (!link) return;
@@ -1165,6 +1419,7 @@ var endpoint = "https://formsubmit.co/" + recipient;
     var target = document.querySelector(id);
     if (!target) return;
     e.preventDefault();
+    closeMenu();
     var top = target.getBoundingClientRect().top + window.pageYOffset -
               (id === "#hero" ? 0 : 64);
     window.scrollTo({ top: Math.max(top, 0), behavior: reduce ? "auto" : "smooth" });

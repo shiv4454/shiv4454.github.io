@@ -1,0 +1,18 @@
+{
+  "name": "Shiv Shankar — IT Infrastructure & Automation",
+  "short_name": "Shiv Shankar",
+  "description": "Portfolio of Shiv Shankar, IT Infrastructure and Automation Professional.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#05070f",
+  "theme_color": "#05070f",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
