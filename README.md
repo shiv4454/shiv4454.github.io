@@ -29,8 +29,8 @@ Search the repo for these strings and replace them:
 
 | Placeholder | Where |
 |---|---|
-| `[ADD YOUR SITE URL]` | `index.html` (canonical + Open Graph), `robots.txt`, `sitemap.xml` |
-| `[ADD YOUR OG IMAGE URL]` | `index.html` Open Graph / Twitter tags |
+| ~~`[ADD YOUR SITE URL]`~~ | filled with `https://shiv4454.github.io` |
+| ~~`[ADD YOUR OG IMAGE URL]`~~ | `og.png` rendered at 1200x630 and committed |
 | `[Add your city]` | Hero card, contact panel |
 | `[Add your profile URL]`, `[Add your CV link]`, `[Add social links]` | Contact panel, footer |
 | `[Add years]` | About facts |
