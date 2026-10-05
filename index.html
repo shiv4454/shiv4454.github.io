@@ -397,6 +397,8 @@
   .contact-list .ci svg{width:16px;height:16px;color:#c7d2fe}
   .contact-list .cl{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);font-weight:600;display:block}
   .contact-list .cv{margin-top:4px;font-size:.94rem;font-weight:500;word-break:break-word;display:block}
+  .contact-list .cv.mailto{color:inherit;text-decoration:none;transition:color .2s}
+  .contact-list .cv.mailto:hover{color:#a5b4fc}
   .copy-btn{margin-top:8px;font-size:.78rem;color:#c7d2fe;background:rgba(99,102,241,.12);
     border:1px solid rgba(147,163,255,.26);padding:5px 12px;border-radius:8px;cursor:pointer;
     transition:all .22s ease}
@@ -594,7 +596,7 @@
           <div class="track-step"><span class="node">6</span><span class="txt">Agentic AI</span></div>
         </div>
         <p class="note">
-          Location: <span class="placeholder">Bangalore</span> ·&nbsp;
+          Location: <span>Bangalore</span> ·&nbsp;
           Email: <button class="copy-btn" id="copyEmail" data-email="shivshankar4454@outlook.com" style="margin-top:0">shivshankar4454@outlook.com</button>
         </p>
       </aside>
@@ -948,19 +950,13 @@
             <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span>
             <span>
               <span class="cl">Email</span>
-              <span class="cv">shivshankar4454@outlook.com</span>
+              <a class="cv mailto" href="mailto:shivshankar4454@outlook.com">shivshankar4454@outlook.com</a>
               <button class="copy-btn" data-email="shivshankar4454@outlook.com">Copy address</button>
             </span>
           </li>
           <li>
             <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
-            <span><span class="cl">Location</span><span class="cv"><span class="placeholder">Bangalore</span></span></span>
-          </li>
-          <li>
-            <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15 0 18M12 3c-2.5 2.7-2.5 15 0 18"/></svg></span>
-          </li>
-          <li>
-            <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a1 1 0 0 1 1-1h11l4 4v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M14 4v5h5M8 13h8M8 16.5h5"/></svg></span>
+            <span><span class="cl">Location</span><span class="cv">Bangalore</span></span>
           </li>
           <li>
             <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
@@ -999,7 +995,8 @@
               Send message
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </button>
-            <span class="form-note">All fields marked * are required.</span>
+            <a class="btn btn-ghost" href="mailto:shivshankar4454@outlook.com?subject=Portfolio%20enquiry">Email me instead</a>
+            <span class="form-note">All fields marked * are required. If sending fails, email reaches me directly.</span>
           </div>
 
           <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
